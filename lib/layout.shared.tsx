@@ -9,9 +9,9 @@ export function baseOptions(): BaseLayoutProps {
     githubUrl: "https://github.com/TheAwesomeAJ/Hackclub-Mobile",
     links: [
       {
-        type: "icon",
+        type: "main",
         icon: <FaSlack />,
-        text: "Slack",
+        text: "#hackclub-mobile",
         url: "https://hackclub.enterprise.slack.com/archives/C09NTG60T8X",
       },
     ],
