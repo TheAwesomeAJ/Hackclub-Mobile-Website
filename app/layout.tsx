@@ -12,9 +12,9 @@ export default function Layout({ children }: LayoutProps<"/">) {
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <body className="flex flex-col min-h-screen">
         <RootProvider>
-          <Banner>
-            This app is unofficial. It is independently made and not endorsed or
-            supported by Hack Club.
+          <Banner id="disclaimer">
+            This app is unofficial and is not endorsed or supported by Hack
+            Club.
           </Banner>
           {children}
         </RootProvider>
