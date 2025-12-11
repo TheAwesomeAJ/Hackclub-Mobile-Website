@@ -1,3 +1,25 @@
 ---
 title: Developer Docs
 ---
+
+## Quickstart
+### Run convex dev command to set up locally or cloud
+```
+pnpm dlx convex dev
+```
+
+### Generate a better auth secret
+```
+pnpm convex env set BETTER_AUTH_SECRET=$(openssl rand -base64 32)
+```
+
+### Setup client id and secret
+Get a client ID and secret from [Hack Club](https://auth.hackclub.com/developer/apps)
+
+The redirect URL should be `https://xxxxx-xxxxx-xxx.convex.site/api/auth/oauth2/callback/hackclub`, replacing `xxxxx-xxxxx-xxx` with your convex site URL.
+
+```
+pnpm dlx convex env set HACKCLUB_CLIENT_ID=your_client_id
+pnpm dlx convex env set HACKCLUB_CLIENT_SECRET=your_client_secret
+```
+(tip: use `$(read)` so it doesn't get saved in your shell history)
