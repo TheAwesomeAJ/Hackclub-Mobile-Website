@@ -1,41 +1,49 @@
-import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
-import type { FeedbackData, ActionResponse } from '@/components/feedback';
 
-export async function POST(req: NextRequest) {
+export async function GET(req: Request) {
   try {
-    const { url, feedback } = await req.json() as { url: string; feedback: FeedbackData };
-    const webhookUrl = process.env.SLACK_FEEDBACK_WEBHOOK_URL;
-    if (!webhookUrl) throw new Error('Missing SLACK_FEEDBACK_WEBHOOK_URL');
+    const url = new URL(req.url);
+    const code = url.searchParams.get('code');
 
-    const blocks: any[] = [
-      { type: 'header', text: { type: 'plain_text', text: feedback.opinion === 'good' ? '👍 Docs Feedback (Good)' : '👎 Docs Feedback (Bad)' } },
-      { type: 'divider' },
-      { type: 'section', text: { type: 'mrkdwn', text: feedback.message } },
-      { type: 'divider' },
-      {
-        type: 'context',
-        elements: [
-          { type: 'mrkdwn', text: `*Page:* ${url}` },
-          { type: 'mrkdwn', text: `*Rating:* ${feedback.opinion}` },
-          feedback.slackId ? { type: 'mrkdwn', text: `*User:* <@${feedback.slackId}>` } : null
-        ].filter(Boolean)
-      }
-    ];
-
-    const res = await fetch(webhookUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ blocks }),
-    });
-
-    if (!res.ok) {
-      const text = await res.text();
-      throw new Error(`Slack webhook error: ${text}`);
+    if (!code) {
+      return NextResponse.json({ error: 'Missing code in query params' }, { status: 400 });
     }
 
-    const result: ActionResponse = { slackTs: new Date().toISOString() };
-    return NextResponse.json(result);
+    // Hack Club OAuth credentials from environment
+    const clientId = process.env.HC_CLIENT_ID!;
+    const clientSecret = process.env.HC_CLIENT_SECRET!;
+    const redirectUri = `${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/callback`;
+
+    // Exchange code for access token
+    const tokenRes = await fetch('https://auth.hackclub.com/oauth/token', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        code,
+        client_id: clientId,
+        client_secret: clientSecret,
+        redirect_uri: redirectUri,
+        grant_type: 'authorization_code',
+      }),
+    });
+
+    const tokenData = await tokenRes.json();
+    if (!tokenData.access_token) {
+      return NextResponse.json(
+        { error: 'Failed to obtain access token', tokenData },
+        { status: 400 }
+      );
+    }
+
+    // Fetch user info
+    const userRes = await fetch('https://auth.hackclub.com/oauth/userinfo', {
+      headers: { Authorization: `Bearer ${tokenData.access_token}` },
+    });
+    const userInfo = await userRes.json();
+
+    // userInfo contains slack_id, email, name, etc.
+    // TODO: create session or cookie here
+    return NextResponse.json({ user: userInfo });
   } catch (err: any) {
     return NextResponse.json({ error: err.message }, { status: 500 });
   }
