@@ -1,105 +1,71 @@
 import {
-	BarChart,
-	CodeIcon,
-	FileText,
-	GlobeIcon,
-	Handshake,
 	HelpCircle,
-	LayersIcon,
-	Leaf,
 	PlugIcon,
-	RotateCcw,
 	Shield,
-	Star,
-	UserPlusIcon,
+	Smartphone,
 	Users,
+	Calendar,
+	Bell,
+	Clock,
 } from "lucide-react";
 import type { LinkItemType } from "@/components/navbar/sheard";
 
 export const productLinks: LinkItemType[] = [
 	{
-		label: "Website Builder",
+		label: "Mobile App",
 		href: "#",
-		description: "Create responsive websites with ease",
-		icon: GlobeIcon,
+		description: "Explore Hack Club Mobile features",
+		icon: Smartphone,
 	},
 	{
-		label: "Cloud Platform",
+		label: "Hackatime Integration",
 		href: "#",
-		description: "Deploy and scale apps in the cloud",
-		icon: LayersIcon,
+		description: "Track your coding streaks with Hackatime",
+		icon: Clock,
 	},
 	{
-		label: "Team Collaboration",
+		label: "View Events",
 		href: "#",
-		description: "Tools to help your teams work better together",
-		icon: UserPlusIcon,
+		description: "See upcoming Hack Club events",
+		icon: Calendar,
 	},
 	{
-		label: "Analytics",
+		label: "YSWS Programs",
 		href: "#",
-		description: "Track and analyze your website traffic",
-		icon: BarChart,
-	},
-	{
-		label: "Integrations",
-		href: "#",
-		description: "Connect your apps and services",
+		description: "Discover You Ship We Ship programs",
 		icon: PlugIcon,
-	},
-	{
-		label: "API",
-		href: "#",
-		description: "Build custom integrations with our API",
-		icon: CodeIcon,
 	},
 ];
 
 export const companyLinks: LinkItemType[] = [
 	{
-		label: "About Us",
+		label: "About Hack Club",
 		href: "#",
-		description: "Learn more about our story and team",
+		description: "Learn about Hack Club and their mission",
 		icon: Users,
 	},
 	{
-		label: "Customer Stories",
+		label: "Privacy Policy",
 		href: "#",
-		description: "See how we’ve helped our clients succeed",
-		icon: Star,
-	},
-	{
-		label: "Partnerships",
-		href: "#",
-		icon: Handshake,
-		description: "Collaborate with us for mutual growth",
+		description: "Read our privacy practices",
+		icon: Shield,
 	},
 ];
 
 export const companyLinks2: LinkItemType[] = [
 	{
-		label: "Terms of Service",
+		label: "For YSWS Managers",
 		href: "#",
-		icon: FileText,
-	},
-	{
-		label: "Privacy Policy",
-		href: "#",
-		icon: Shield,
-	},
-	{
-		label: "Refund Policy",
-		href: "#",
-		icon: RotateCcw,
-	},
-	{
-		label: "Blog",
-		href: "#",
-		icon: Leaf,
+		icon: Bell,
 	},
 	{
 		label: "Help Center",
 		href: "#",
 		icon: HelpCircle,
+	},
+	{
+		label: "About Us",
+		href: "#",
+		icon: Users,
 	},
 ];

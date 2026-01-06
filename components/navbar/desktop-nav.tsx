@@ -15,7 +15,7 @@ export function DesktopNav() {
 			<NavigationMenuList>
 				<NavigationMenuItem>
 					<NavigationMenuTrigger className="bg-transparent">
-						Product
+						Features
 					</NavigationMenuTrigger>
 					<NavigationMenuContent className="bg-muted/50 p-1 pr-1.5 dark:bg-background">
 						<div className="grid w-lg grid-cols-2 gap-2 rounded-md border bg-popover p-2 shadow">
@@ -31,20 +31,28 @@ export function DesktopNav() {
 						</div>
 						<div className="p-2">
 							<p className="text-muted-foreground text-sm">
-								Interested?{" "}
+								Want to get involved?{" "}
 								<a
 									className="font-medium text-foreground hover:underline"
-									href="#"
+									href="https://hackclub.com/slack/"
 								>
-									Schedule a demo
+									Join the Hack Club Slack
 								</a>
+								{" "}or{" "}
+								<a
+									className="font-medium text-foreground hover:underline"
+									href="/contribute"
+								>
+									contribute.
+								</a>
+								.
 							</p>
 						</div>
 					</NavigationMenuContent>
 				</NavigationMenuItem>
 				<NavigationMenuItem>
 					<NavigationMenuTrigger className="bg-transparent">
-						Company
+						Community
 					</NavigationMenuTrigger>
 					<NavigationMenuContent className="bg-muted/50 p-1 pr-1.5 pb-1.5 dark:bg-background">
 						<div className="grid w-lg grid-cols-2 gap-2">
@@ -76,7 +84,7 @@ export function DesktopNav() {
 				</NavigationMenuItem>
 				<NavigationMenuLink asChild className="px-4">
 					<a className="rounded-md p-2 hover:bg-accent" href="#">
-						Pricing
+						Contact Us
 					</a>
 				</NavigationMenuLink>
 			</NavigationMenuList>
