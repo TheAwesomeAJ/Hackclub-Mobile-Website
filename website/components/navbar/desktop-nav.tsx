@@ -11,8 +11,8 @@ import { LinkItem } from "@/components/navbar/sheard";
 
 export function DesktopNav() {
 	return (
-		<NavigationMenu className="hidden md:flex">
-			<NavigationMenuList>
+		<NavigationMenu className="hidden md:flex mx-auto">
+			<NavigationMenuList className="items-center justify-center">
 				<NavigationMenuItem>
 					<NavigationMenuTrigger className="bg-transparent">
 						Features

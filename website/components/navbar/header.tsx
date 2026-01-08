@@ -1,6 +1,5 @@
 "use client";
 import { useScroll } from "@/hooks/use-scroll";
-import { Logo } from "@/components/navbar/logo";
 import { Button } from "@/components/ui/button";
 
 import { cn } from "@/lib/utils";
@@ -18,10 +17,14 @@ export function MainHeader() {
 					scrolled,
 			})}
 		>
-			<nav className="mx-auto flex h-14 w-full max-w-7xl items-center justify-between px-4">
-				<div className="flex items-center gap-5">
-					<a className="rounded-md px-3 py-2.5 hover:bg-accent" href="#">
-						<Logo className="h-4" />
+			<nav className="mx-auto flex h-6 w-full max-w-7xl items-center px-4">
+				<div className="flex flex-1 items-center justify-center gap-5">
+					<a className="rounded-md px-3 py-2.5 hover:bg-accent flex items-center" href="#">
+						<img
+							src="full-logo.svg"
+							alt="Hack Club Logo"
+							className="h-12"
+						/>
 					</a>
 					<DesktopNav />
 				</div>

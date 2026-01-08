@@ -60,7 +60,7 @@ export const companyLinks2: LinkItemType[] = [
 	},
 	{
 		label: "Help Center",
-		href: "#",
+		href: "/docs",
 		icon: HelpCircle,
 	},
 	{

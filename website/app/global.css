@@ -1,6 +1,6 @@
 @import "tailwindcss";
-@import "fumadocs-ui/css/solar.css";
-@import "fumadocs-ui/css/preset.css";
+@import "@prose-ui/style/prose-ui.css";
+@import "@prose-ui/style/katex.min.css";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -130,21 +130,7 @@
     }
 }
 
-.fumadocs-sidebar-item:hover {
-  background-color: rgba(255, 255, 255, 0.04);
-}
-
-.fumadocs-sidebar-item-active {
-  background-color: rgba(255, 255, 255, 0.06);
-}
-
-.fumadocs-sidebar {
-  background: transparent !important;
-}
-
-:root {
-  --fd-sidebar-bg: transparent;
-}
-.dark {
-  --fd-sidebar-bg: transparent;
+/* Example for tailwind.config.js or global.css */
+.font-phantom {
+  font-family: 'Phantom Sans', sans-serif;
 }
