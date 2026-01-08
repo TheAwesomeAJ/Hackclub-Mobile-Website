@@ -7,6 +7,9 @@ export default function Layout({ children }: LayoutProps<'/docs'>) {
     <DocsLayout
       tree={source.pageTree}
       {...baseOptions()}
+      sidebar={{
+        className: 'bg-transparent border-r-0',
+      }}
     >
       {children}
     </DocsLayout>

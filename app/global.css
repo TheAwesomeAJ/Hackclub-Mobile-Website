@@ -129,3 +129,22 @@
     @apply bg-background text-foreground;
     }
 }
+
+.fumadocs-sidebar-item:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.fumadocs-sidebar-item-active {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.fumadocs-sidebar {
+  background: transparent !important;
+}
+
+:root {
+  --fd-sidebar-bg: transparent;
+}
+.dark {
+  --fd-sidebar-bg: transparent;
+}
