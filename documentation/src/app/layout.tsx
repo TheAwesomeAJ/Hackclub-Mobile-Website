@@ -3,6 +3,7 @@ import localFont from 'next/font/local'
 import './globals.css'
 import { ThemeProvider } from 'next-themes'
 import { TopNav } from '@/components/navigation/topnav'
+import { DocsLayout } from '@/components/docs-layout'
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -19,37 +20,20 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: 'Prose UI Docs Starter',
-  description: 'Documentation starter template with Next.js and Prose UI. Free and open-source.',
+  description:
+    'Documentation starter template with Next.js and Prose UI. Free and open-source.',
   openGraph: {
     type: 'website',
     title: 'Prose UI Docs Starter',
-    description: 'Documentation starter template with Next.js and Prose UI. Free and open-source.',
+    description:
+      'Documentation starter template with Next.js and Prose UI. Free and open-source.',
     url: 'https://prose-ui-docs-starter.vercel.app',
   },
   icons: [
-    {
-      rel: 'icon',
-      type: 'image/x-icon',
-      url: '/favicon.ico',
-    },
-    {
-      rel: 'icon',
-      type: 'image/svg+xml',
-      url: '/favicon-dark.svg',
-      media: '(prefers-color-scheme: light)',
-    },
-    {
-      rel: 'icon',
-      type: 'image/svg+xml',
-      url: '/favicon-light.svg',
-      media: '(prefers-color-scheme: dark)',
-    },
-    {
-      rel: 'apple-touch-icon',
-      url: '/apple-touch-icon.png',
-      type: 'image/png',
-      sizes: '<generated>',
-    },
+    { rel: 'icon', type: 'image/x-icon', url: '/favicon.ico' },
+    { rel: 'icon', type: 'image/svg+xml', url: '/favicon-dark.svg', media: '(prefers-color-scheme: light)' },
+    { rel: 'icon', type: 'image/svg+xml', url: '/favicon-light.svg', media: '(prefers-color-scheme: dark)' },
+    { rel: 'apple-touch-icon', url: '/apple-touch-icon.png', type: 'image/png', sizes: '<generated>' },
   ],
 }
 
@@ -73,7 +57,9 @@ export default function RootLayout({
         >
           <>
             <TopNav />
-            {children}
+            <DocsLayout>
+              {children}
+            </DocsLayout>
           </>
         </ThemeProvider>
       </body>

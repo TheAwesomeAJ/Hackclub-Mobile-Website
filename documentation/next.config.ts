@@ -1,9 +1,10 @@
 import { withContentCollections } from "@content-collections/next";
+import type { NextConfig } from "next";
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
+  // Serve all docs under /docs
   basePath: "/docs",
-  assetPrefix: "/docs/",
+  assetPrefix: "/docs/", // ensures CSS/JS load correctly
 };
 
 export default withContentCollections(nextConfig);

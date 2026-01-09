@@ -20,3 +20,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .content-collections
+
+.vercel
+.env*.local
