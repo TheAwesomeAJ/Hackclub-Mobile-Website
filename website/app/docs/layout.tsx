@@ -2,6 +2,7 @@ import { PropsWithChildren } from 'react'
 import { TopNav } from '@/components/docs/navigation/topnav'
 import { DocsLayout as DocsLayoutComponent } from '@/components/docs/docs-layout'
 import localFont from 'next/font/local'
+import { classes } from '@/utils/classes'
 import '../docs-globals.css'
 
 const geistSans = localFont({
@@ -23,7 +24,7 @@ export default function Layout({
   children: React.ReactNode
 }>) {
   return (
-    <div className={`${geistSans.variable} ${geistMono.variable} ${geistSans.className}`}>
+    <div className={classes(geistSans.variable, geistMono.variable, geistSans.className)}>
       <TopNav />
       <DocsLayoutComponent>{children}</DocsLayoutComponent>
     </div>

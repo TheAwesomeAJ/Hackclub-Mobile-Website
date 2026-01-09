@@ -16,7 +16,10 @@ export const extractToc = (root: Root): Section[] => {
       const id = slugify(title, {
         lower: true,
         strict: true,
-      }).replaceAll(/(^\d)|[^a-zA-Z0-9-_]/g, '')
+      })
+        // Remove leading digits and any remaining invalid ID characters
+        // This ensures the ID is valid for HTML anchors (IDs cannot start with digits)
+        .replaceAll(/(^\d)|[^a-zA-Z0-9-_]/g, '')
       sections.push({ id, title, depth: node.depth })
     }
   }
