@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/docs",
-      "destination": "https://hcm-docs.vercel.app"
+      "destination": "https://hcm-docs.vercel.app/docs"
     },
     {
       "source": "/docs/:path*",
-      "destination": "https://hcm-docs.vercel.app/:path*"
+      "destination": "https://hcm-docs.vercel.app/docs/:path*"
     }
   ]
 }
