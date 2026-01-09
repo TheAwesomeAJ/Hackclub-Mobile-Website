@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/docs",
+      "destination": "https://hcm-docs.vercel.app"
+    },
+    {
+      "source": "/docs/:path*",
+      "destination": "https://hcm-docs.vercel.app/:path*"
+    }
+  ]
+}
