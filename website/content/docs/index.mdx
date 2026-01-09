@@ -1,32 +1,101 @@
----
-title: Introduction
-description: Welcome to the Hack Club Mobile App docs!
-icon: "Rocket"
----
+import { BookOpen, Shapes, PanelsTopLeft } from 'lucide-react'
 
-<Callout title="Disclaimer" type="warning">Hack Club Mobile is an independent, community-built application. It is not officially affiliated with, supported by, or endorsed by Hack Club, HCB (Hack Club Bank), or the official Hack Club organization yet. This website and the app are created and maintained by a third party, and any content, opinions, or features presented here are solely those of the developers.</Callout>
+# Introduction
 
-## About Hack Club Mobile
+Hello, universe! This is an open-source Prose UI starter template for documentation sites built with Next.js. Feel free to clone this template and start building your own site.
 
-The **Hack Club Mobile App** is designed to bring the [Hack Club](https://hackclub.com) experience directly to your smartphone. It allows members to easily access Hack Club resources, stay up-to-date with events, collaborate with fellow coders, and participate in club activities on the go.
+This template uses Prose UI components and remark plugins to render MDX content. For example, the image below is rendered using the `Image` and `Frame` components, with a caption.
 
-With a focus on community and learning, the app makes coding more accessible and fun for students worldwide. You can take on coding challenges, explore project ideas, view your [Hackatime](https://hackatime.hackclub.com) stats, connect with other hackers, and discover [YSWS](https://ysws.hackclub.com) projects (“You Ship, We Ship”) to see what others are building and share your own creations. The **Hack Club Mobile App** puts everything you need to code, collaborate, and showcase your work right at your fingertips.
+<Frame
+  align="center"
+  caption="Juno Captures Moon Shadow on Jupiter. Credits: NASA/JPL-Caltech/SwRI/MSSS, Thomas Thomopoulos © CC BY"
+>
+  <Image src="/img/jupiter.jpg" width={480} alt="Juno Captures Moon Shadow on Jupiter" />
+</Frame>
 
-## Team
+Mathematical formulas can also be rendered using LaTeX syntax. Here's a block formula example:
 
-Who is currently working on **Hack Club Mobile**?
+$$
+i\hbar\frac{\partial}{\partial t}\Psi(\mathbf{r},t) = \hat{H}\Psi(\mathbf{r},t) = \left[-\frac{\hbar^2}{2m}\nabla^2 + V(\mathbf{r},t)\right]\Psi(\mathbf{r},t)
+$$
 
-<Cards>
-    <Card title="@AJ" href="https://github.com/theawesomeaj">
-        Developer
-    </Card>
-    <Card title="@Ingo" href="https://github.com/Inglan">
-        Developer
-    </Card>
-    <Card title="@Adhyys" href="https://github.com/adhyys07">
-        Developer
-    </Card>
-    <Card title="@pizzalover125" href="https://github.com/pizzalover125/">
-        Developer
-    </Card>
-</Cards>
+## Tech stack
+
+This template uses the following technologies:
+
+**[Next.js 16](https://nextjs.org)**\
+The backbone of the site. Pre-renders pages at build time for fast production performance.
+
+**[Prose UI](https://prose-ui.com)**\
+Provides components and styles for building clean, MDX-powered documentation.
+
+**[TailwindCSS](https://tailwindcss.com)**\
+Facilitates flexible and efficient styling.
+
+**[Shadcn UI](https://ui.shadcn.com)**\
+Includes familiar, shadcn-inspired components.
+
+**[Content Collections](https://www.content-collections.dev)**\
+Renders MDX files with `mdx-bundler` and helps manage frontmatter.
+
+**[MDX v3](https://mdxjs.com)**\
+Combines Markdown and JSX for interactive, component-based content.
+
+**[Radix](https://mdxjs.com)**\
+Provides accessible components used for key elements in this template.
+
+----
+
+## Key features
+
+This template includes the following features:
+
+**WYSIWYG editor**\
+Edit your Prose UI MDX files with [Dhub's](https://dhub.dev) WYSIWYG editor.
+
+**Dark mode**\
+Light and dark modes powered by [next/themes](https://github.com/pacocoursey/next-themes).
+
+**Content folder**\
+Content (MDX files) is separated into a dedicated content folder, making it much easier to manage than scattered `page.mdx` files.
+
+**Table of contents**\
+A TOC component on the right helps navigate page content effortlessly.
+
+**Code highlighting**\
+[Shiki](https://shiki.style/)-powered server-side code highlighting (via Prose UI).
+
+**Hierarchical sidenav**\
+Organize your navigation into categories, folders, and files.
+
+**Customizable theme**\
+Customize the look and feel using pre-defined [CSS variables](https://prose-ui.com/docs/styling).
+
+**SEO-friendly**\
+Pre-generated pages ensure fast performance and allow search engines to easily index fully-rendered content.
+
+**Blazing fast**\
+Next.js performance optimizations make the site extremely fast with virtually instant page navigation.
+
+**Search**&#x20;\
+Coming soon
+
+**API reference docs**\
+Comming soon
+
+
+## Components
+
+This will have a demonstration of components
+
+## Explore Prose UI
+
+Get started with Prose UI
+
+<Cards
+  content={[ 
+  { icon: BookOpen, title: 'Prose UI', description: 'Start exploring Prose UI concepts and examples.', url: 'https://prose-ui.com', },
+  { icon: PanelsTopLeft, title: 'Templates', description: 'Start quickly with one of the templates.', url: 'https://prose-ui.com/templates', },
+  { icon: Shapes, title: 'Components', description: 'Browse and explore Prose UI components.', url: 'https://prose-ui.com/docs/components/overview', }
+  ]}
+/>

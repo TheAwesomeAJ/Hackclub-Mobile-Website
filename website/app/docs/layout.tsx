@@ -1,12 +1,31 @@
-import type { ReactNode } from "react";
-import { DocsLayout } from "fumadocs-ui/layouts/docs";
-import { baseOptions } from "@/lib/layout.shared";
-import { source } from "@/lib/source";
+import { PropsWithChildren } from 'react'
+import { TopNav } from '@/components/docs/navigation/topnav'
+import { DocsLayout as DocsLayoutComponent } from '@/components/docs/docs-layout'
+import localFont from 'next/font/local'
+import '../docs-globals.css'
 
-export default function Layout({ children }: { children: ReactNode }) {
+const geistSans = localFont({
+  src: './fonts/GeistVF.woff',
+  variable: '--font-geist-sans',
+  weight: '100 900',
+  display: 'swap',
+})
+const geistMono = localFont({
+  src: './fonts/GeistMonoVF.woff',
+  variable: '--font-geist-mono',
+  weight: '100 900',
+  display: 'swap',
+})
+
+export default function Layout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
   return (
-    <DocsLayout tree={source.pageTree} {...baseOptions()}>
-      {children}
-    </DocsLayout>
-  );
+    <div className={`${geistSans.variable} ${geistMono.variable} ${geistSans.className}`}>
+      <TopNav />
+      <DocsLayoutComponent>{children}</DocsLayoutComponent>
+    </div>
+  )
 }
