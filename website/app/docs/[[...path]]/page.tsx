@@ -2,7 +2,7 @@ import Cards from '@/components/docs/cards'
 import { Toc } from '@/components/docs/navigation/toc'
 import { MDXContent } from '@content-collections/mdx/react'
 import { mdxComponents } from '@prose-ui/next'
-import { allPages } from 'content-collections'
+import { allPages } from '../../../.content-collections/generated'
 import { Metadata } from 'next'
 
 type Params = Promise<{ path: string[] }>
