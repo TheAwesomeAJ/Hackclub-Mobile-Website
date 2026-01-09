@@ -6,8 +6,9 @@ export function proxy(req: NextRequest) {
   // Forward /docs and subpaths to docs app
   if (pathname === "/docs" || pathname.startsWith("/docs/")) {
     const url = req.nextUrl.clone();
-    url.hostname = "localhost"; // docs app
-    url.port = "3001";
+    url.hostname = "hcm-docs.vercel.app"; // docs app
+    url.port = ""; // Vercel does not require a port
+    url.protocol = "https:"; // Ensure HTTPS
     url.pathname = pathname; // keep /docs prefix
     return NextResponse.rewrite(url);
   }
