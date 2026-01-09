@@ -6,7 +6,7 @@ import { z } from 'zod'
 
 const pages = defineCollection({
   name: 'pages',
-  directory: 'content/docs',
+  directory: 'content/documentation',
   include: '**/*.mdx',
   schema: z.object({
     title: z.string().optional(),
@@ -34,6 +34,8 @@ const pages = defineCollection({
     }
   },
 })
+
+export const allPages = pages
 
 export default defineConfig({
   collections: [pages],

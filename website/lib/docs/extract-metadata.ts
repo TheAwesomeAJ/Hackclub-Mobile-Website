@@ -1,8 +1,8 @@
 import { remark } from 'remark'
 import remarkMdx from 'remark-mdx'
 import { remarkPlugins } from '@prose-ui/core'
-import { extractToc } from './extract-toc.js'
-import { extractTitle } from './extract-title.js'
+import { extractToc } from './extract-toc'
+import { extractTitle } from './extract-title'
 
 export const extractMetadata = async (mdx: string) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

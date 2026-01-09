@@ -1,7 +1,6 @@
 ---
 title: Quickstart
 ---
-import { Step, Steps } from 'fumadocs-ui/components/steps';
 
 There is a quickstart script that can be ran with
 ```
@@ -17,16 +16,13 @@ pnpm dlx convex dev
 ```
 
 ## Set up authentication
-<Steps>
-<Step>
-### Generate a Better Auth secret
+
+### Step 1: Generate a Better Auth secret
 ```
 pnpm convex env set BETTER_AUTH_SECRET=$(openssl rand -base64 32)
 ```
-</Step>
 
-<Step>
-### Create an app
+### Step 2: Create an app
 Go to [the developer dashboard](https://auth.hackclub.com/developer/apps) and press create app.
 
 The redirect URL should look like
@@ -34,27 +30,23 @@ The redirect URL should look like
 https://xxxxx-xxxxx-xxx.convex.site/api/auth/oauth2/callback/hackclub
 ```
 (replace `xxxxx-xxxxx-xxx` with your convex site URL)
+
 #### Scopes
  * `openid` Enable OpenID Connect authentication
  * `profile` See your name and profile information
  * `email` See your email address
  * `name` See your name
  * `slack_id` See your Slack ID
-</Step>
 
-<Step>
-### Set Convex environment variables
+### Step 3: Set Convex environment variables
 Convex uses a different set of environment variables to your local machine. Set them using the Convex CLI.
 
 ```
 pnpm dlx convex env set HACKCLUB_CLIENT_ID=your_client_id
 pnpm dlx convex env set HACKCLUB_CLIENT_SECRET=your_client_secret
 ```
-<Callout type="tip">
-    You can use `$(read)` so it doesn't get saved in your shell history
-</Callout>
-</Step>
-</Steps>
+
+> **Tip:** You can use `$(read)` so it doesn't get saved in your shell history
 
 ### Start app
 ```
