@@ -12,8 +12,6 @@ import { Logo } from './logo'
 import { Button } from '../ui/button'
 import { ExternalLinkIcon, MenuIcon, XIcon } from 'lucide-react'
 import { Footer } from './footer'
-import { SiGithub } from '@icons-pack/react-simple-icons'
-import Link from 'next/link'
 import { GithubButton } from '../github-button'
 
 export const MobileNav = ({ className }: { className?: string }) => {
@@ -74,8 +72,8 @@ export const MobileNav = ({ className }: { className?: string }) => {
                   exit={{ translateX: 100, opacity: 0 }}
                 >
                   <div className="px-[var(--site-padding-x)] py-6">
-                    <SidenavLink href="https://prose-ui.com">
-                      Prose UI <ExternalLinkIcon size={16} />
+                    <SidenavLink href="https://hackclub.com/slack">
+                      Slack <ExternalLinkIcon size={16} />
                     </SidenavLink>
                     <SideNav tree={navigationTree} />
                   </div>

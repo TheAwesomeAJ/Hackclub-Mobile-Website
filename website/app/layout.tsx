@@ -1,4 +1,3 @@
-import { RootProvider } from "fumadocs-ui/provider/next";
 import "./global.css";
 import { Inter } from "next/font/google";
 import HeaderVis from "@/components/navbar/header-vis";
@@ -19,10 +18,8 @@ export default function Layout({ children }: LayoutProps<"/">) {
           enableSystem
           disableTransitionOnChange
         >
-          <RootProvider>
             <HeaderVis />
             {children}
-          </RootProvider>
         </ThemeProvider>
       </body>
     </html>

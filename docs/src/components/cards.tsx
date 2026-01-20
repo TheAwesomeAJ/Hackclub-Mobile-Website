@@ -25,7 +25,7 @@ const Cards = ({ content }: { content?: Content[] }) => (
   </nav>
 )
 
-const Card = ({ title, description, url, icon: Icon }: Content) => (
+export const Card = ({ title, description, url, icon: Icon }: Content) => (
   <Link
     role="listitem"
     className="border-base bg-background-low hover:border-accent-low hover:bg-background-low/95 overflow-hidden rounded border transition duration-100 active:translate-y-px"

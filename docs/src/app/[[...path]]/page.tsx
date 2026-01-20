@@ -24,7 +24,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { path } = await params
   let page = findPage(path)
-  const title = page ? `${page.title} - Prose UI Docs Starter` : 'Prose UI Docs Starter'
+  const title = page ? `${page.title} - Hack Club Mobile Docs` : 'Hack Club Mobile Docs'
   return {
     title,
   }
@@ -35,18 +35,18 @@ export default async function Page({ params }: { params: Params }) {
   let page = findPage(path)
   if (!page) {
     return (
-      <div className="prose-ui relative mb-64 min-w-0 flex-1 px-[var(--article-padding-x)] md:px-[var(--article-padding-x-md)] lg:px-[var(--article-padding-x-lg)] xl:px-[var(--article-padding-x-xl)]">
+      <div className="prose-ui relative mb-64 min-w-0 flex-1 px-(--article-padding-x) md:px-(--article-padding-x-md) lg:px-(--article-padding-x-lg) xl:px-(--article-padding-x-xl)">
         <p>Page not found</p>
       </div>
     )
   }
   return (
     <>
-      <article className="prose-ui relative mb-64 min-w-0 flex-1 px-[var(--article-padding-x)] md:px-[var(--article-padding-x-md)] lg:px-[var(--article-padding-x-lg)] xl:px-[var(--article-padding-x-xl)]">
+      <article className="prose-ui relative mb-64 min-w-0 flex-1 px-(--article-padding-x) md:px-(--article-padding-x-md) lg:px-(--article-padding-x-lg) xl:px-(--article-padding-x-xl)">
         <MDXContent code={page.content} components={{ ...mdxComponents, Cards }} />
       </article>
 
-      <div className="sticky top-[var(--topnav-height)] hidden h-[calc(100vh-var(--topnav-height))] w-[var(--toc-width)] shrink-0 flex-col pt-[var(--article-padding-t)] lg:flex">
+      <div className="sticky top-(--topnav-height) hidden h-[calc(100vh-var(--topnav-height))] w-(--toc-width) shrink-0 flex-col pt-(--article-padding-t) lg:flex">
         <Toc sections={page.toc} />
       </div>
     </>

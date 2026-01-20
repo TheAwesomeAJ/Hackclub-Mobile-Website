@@ -79,7 +79,7 @@ const SidenavFolder = ({ item, level }: { item: TreeNode; level: number }) => {
           }
         }}
         className={classes(
-          'hover:bg-background-low/60 group relative mb-px flex cursor-pointer flex-row items-center justify-between rounded-md px-[0.875rem] py-2 font-medium transition md:px-2 md:py-[0.3rem] md:text-sm',
+          'hover:bg-background-low/60 group relative mb-px flex cursor-pointer flex-row items-center justify-between rounded-md px-3.5 py-2 font-medium transition md:px-2 md:py-[0.3rem] md:text-sm',
           active ? 'text-accent' : 'text-foreground-low hover:text-accent-high',
           open && 'bg-background-lower'
         )}

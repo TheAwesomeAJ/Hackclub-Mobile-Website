@@ -7,8 +7,8 @@ export function proxy(req: NextRequest) {
   if (pathname === "/docs" || pathname.startsWith("/docs/")) {
     const url = req.nextUrl.clone();
     url.hostname = "localhost"; // docs app
-    url.port = "3000"; // Vercel does not require a port
-    url.protocol = "https:"; // Ensure HTTPS
+    url.port = "3001"; // Vercel does not require a port
+    url.protocol = "http:"; // Ensure HTTPS
     url.pathname = pathname; // keep /docs prefix
     return NextResponse.rewrite(url);
   }

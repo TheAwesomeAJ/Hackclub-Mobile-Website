@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3001",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3001",
     "lint": "next lint"
   },
   "dependencies": {
@@ -38,6 +38,7 @@
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "acorn": "^8.15.0",
+    "baseline-browser-mapping": "^2.9.15",
     "clsx": "^2.1.1",
     "mdast-util-to-string": "^4.0.0",
     "postcss": "^8.5.6",
