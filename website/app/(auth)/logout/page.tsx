@@ -11,7 +11,7 @@ export default function LogoutPage() {
     // Optionally clear other auth-related storage here
 
     // Redirect to login page after logout
-    redirect("/login");
+    redirect("/");
   }, []);
 
   return (

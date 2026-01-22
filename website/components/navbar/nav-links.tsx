@@ -7,6 +7,9 @@ import {
 	Calendar,
 	Bell,
 	Clock,
+	Plus,
+	ScrollText,
+	GitPullRequest,
 } from "lucide-react";
 import type { LinkItemType } from "@/components/navbar/sheard";
 
@@ -50,6 +53,12 @@ export const companyLinks: LinkItemType[] = [
 		description: "Read our privacy practices",
 		icon: Shield,
 	},
+	{
+		label: "Terms of Service",
+		href: "#",
+		description: "Read our terms and conditions",
+		icon: ScrollText,
+	},
 ];
 
 export const companyLinks2: LinkItemType[] = [
@@ -59,7 +68,7 @@ export const companyLinks2: LinkItemType[] = [
 		icon: Bell,
 	},
 	{
-		label: "Help Center",
+		label: "Documentation",
 		href: "/docs",
 		icon: HelpCircle,
 	},
@@ -67,5 +76,17 @@ export const companyLinks2: LinkItemType[] = [
 		label: "About Us",
 		href: "#",
 		icon: Users,
+	},
+	{
+		label: "Suggest a Feature",
+		href: "#",
+		description: "Help us improve by suggesting features",
+		icon: Plus,
+	},
+	{
+		label: "Contributions",
+		href: "#",
+		description: "Contribute to Hack Club Mobile",
+		icon: GitPullRequest,
 	},
 ];
