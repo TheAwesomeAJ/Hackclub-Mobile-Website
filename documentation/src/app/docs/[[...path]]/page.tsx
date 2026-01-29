@@ -24,7 +24,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { path } = await params
   let page = findPage(path)
-  const title = page ? `${page.title} - Prose UI Docs Starter` : 'Prose UI Docs Starter'
+  const title = page ? `${page.title} - Hack Club Mobile Docs` : 'Hack Club Mobile Docs'
   return {
     title,
   }

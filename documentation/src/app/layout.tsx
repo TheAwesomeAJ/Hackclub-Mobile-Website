@@ -18,12 +18,12 @@ const geistMono = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'Prose UI Docs Starter',
-  description: 'Documentation starter template with Next.js and Prose UI. Free and open-source.',
+  title: 'Hack Club Mobile',
+  description: 'A mobile application for Hack Club.',
   openGraph: {
     type: 'website',
-    title: 'Prose UI Docs Starter',
-    description: 'Documentation starter template with Next.js and Prose UI. Free and open-source.',
+    title: 'Hack Club Mobile',
+    description: 'A mobile application for Hack Club.',
     url: 'https://prose-ui-docs-starter.vercel.app',
   },
   icons: [

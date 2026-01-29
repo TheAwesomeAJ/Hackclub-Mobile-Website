@@ -1,0 +1,99 @@
+# Tech Stack
+
+Hack Club Mobile is split into two main parts: the mobile app and the website. Each part has its own stack, chosen to keep the project simple to develop, deploy, and contribute to.
+
+---
+
+## 📱 Mobile App
+
+The mobile app runs on both iOS and Android and is written entirely in TypeScript.
+
+### Expo  
+Expo is the runtime and tooling layer for the app.
+
+- Handles native APIs (camera, haptics, filesystem, etc.)
+- Provides local development with hot reload
+- Manages builds for iOS and Android
+- Eliminates the need to manually configure Xcode or Android Studio
+
+Expo is the foundation that lets the app stay “one codebase, two platforms.”
+
+### React Native  
+React Native is used for all UI and app logic.
+
+- Component-based UI
+- Standard React patterns (hooks, state, context)
+- Shared code across platforms
+- Typed with TypeScript
+
+All screens, navigation, and interactions live here.
+
+### Convex  
+Convex is the backend platform.
+
+- Database
+- Server-side functions
+- Real-time subscriptions
+- Automatic syncing between clients
+
+There is no separate API server to maintain. The app calls Convex functions directly, and data updates propagate in real time.
+
+Typical uses:
+- User data
+- Projects and apps
+- Syncing state across devices
+- Background logic (validation, permissions, etc.)
+
+### Better Auth  
+Better Auth handles authentication and identity.
+
+- User accounts
+- Sessions
+- Sign-in / sign-up flows
+- Integration with Convex
+
+It keeps auth logic out of the app code and centralizes it in one place.
+
+---
+
+## 🌐 Website
+
+The website hosts documentation, project info, and community-facing pages.
+
+### Next.js  
+Primary web framework.
+
+- Routing and layouts
+- Server-side rendering
+- Static generation for docs
+- Deployment-friendly
+
+### Tailwind CSS  
+Used for all styling.
+
+- Utility-first CSS
+- Consistent spacing, colors, and typography
+- No separate CSS files to manage
+
+### shadcn/ui  
+Component system built on Tailwind.
+
+- Buttons, inputs, dialogs, cards, etc.
+- Accessible by default
+- Components live in the repo and are editable
+
+### Prose UI  
+Used for long-form content.
+
+- Documentation pages
+- Guides and articles
+- Consistent typography and spacing for text-heavy pages
+
+---
+
+This stack keeps both sides of the project:
+
+- Fully TypeScript
+- Low in infrastructure overhead
+- Easy to run locally
+- Straightforward for new contributors to understand
