@@ -12,18 +12,18 @@
         "type": "link",
         "name": "Tech Stack",
         "href": "/tech-stack"
-      },
-      {
-        "type": "link",
-        "name": "Basics",
-        "href": "/basics"
       }
     ]
   },
   {
     "type": "category",
-    "name": "Solar System",
+    "name": "Contributing",
     "children": [
+      {
+        "type": "link",
+        "name": "Overview",
+        "href": "/contributing/overview"
+      },
       {
         "type": "folder",
         "name": "Planets",
@@ -31,17 +31,17 @@
           {
             "type": "link",
             "name": "Earth",
-            "href": "/solar-system/planets/earth"
+            "href": "/contributing/planets/earth"
           },
           {
             "type": "link",
             "name": "Mars",
-            "href": "/solar-system/planets/mars"
+            "href": "/contributing/planets/mars"
           },
           {
             "type": "link",
             "name": "Jupiter",
-            "href": "/solar-system/planets/jupiter"
+            "href": "/contributing/planets/jupiter"
           }
         ]
       },
